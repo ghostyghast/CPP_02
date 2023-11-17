@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 19:38:40 by amaligno          #+#    #+#             */
-/*   Updated: 2023/11/17 20:33:26 by amaligno         ###   ########.fr       */
+/*   Updated: 2023/11/17 20:35:32 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,13 @@ class Fixed{
 	public:
 				Fixed();
 				Fixed(Fixed &copy);
-				Fixed(const int i);
-				Fixed(const float f);
 				~Fixed();
 		//Getter
 		int		getRawBits(void) const;
 		//Setter
 		void	setRawBits(int const raw);
-		//
-		float	toFloat(void) const;
+		//Operator overload
+		Fixed	&operator=(Fixed &copy);
 };
-
-Fixed	&operator=(Fixed &copy);
-
 
 #endif
