@@ -1,2 +1,5 @@
 *.o
 fixed_point
+test.cpp
+test.c
+a.out

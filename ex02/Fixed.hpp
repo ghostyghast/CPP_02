@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 19:38:40 by amaligno          #+#    #+#             */
-/*   Updated: 2023/12/18 18:12:28 by amaligno         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:54:30 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,32 @@ class Fixed{
 		//methods
 		float	toFloat(void) const;
 		int		toInt(void) const;
-		//operator overloads
-			Fixed	&operator=(const Fixed &copy);
+		//Static methods
+		static const Fixed	&min(const Fixed &num_1, const Fixed &num_2);
+		static const Fixed	&max(const Fixed &num_1, const Fixed &num_2);
+		static Fixed		&min(Fixed &num_1, Fixed &num_2);
+		static Fixed		&max(Fixed &num_1, Fixed &num_2);
+	//operator overloads
+			Fixed	&operator=(const Fixed &num);
+		//Conditional
+			bool	operator<(const Fixed &num);
+			bool	operator>(const Fixed &num);
+			bool	operator==(const Fixed &num);
+			bool	operator!=(const Fixed &num);
+			bool	operator>=(const Fixed &num);
+			bool	operator<=(const Fixed &num);
+		//Arithmetic
+			float	operator*(const Fixed &num);
+			float	operator+(const Fixed &num);
+			float	operator-(const Fixed &num);
+			float	operator/(const Fixed &num);
+		//Increment / decrement
+			//postfix
+			Fixed	operator++(int);
+			Fixed	operator--(int);
+			//prefix
+			Fixed	operator++();
+			Fixed	operator--();
 };
 
 // void	print_bits(int num);

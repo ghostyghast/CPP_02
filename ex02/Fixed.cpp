@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 19:46:39 by amaligno          #+#    #+#             */
-/*   Updated: 2023/12/18 18:10:28 by amaligno         ###   ########.fr       */
+/*   Updated: 2023/12/18 18:54:46 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,112 @@ std::ostream &operator<<(std::ostream &stream, const Fixed &num)
 {
 	stream << num.toFloat();
 	return (stream);
+}
+
+bool	Fixed::operator<(const Fixed &num)
+{
+	return (this->toFloat() < num.toFloat());
+}
+
+bool	Fixed::operator>(const Fixed &num)
+{
+	return (this->toFloat() > num.toFloat());
+}
+
+bool	Fixed::operator==(const Fixed &num)
+{
+	return (this->toFloat() == num.toFloat());
+}
+
+bool	Fixed::operator!=(const Fixed &num)
+{
+	return (this->toFloat() != num.toFloat());
+}
+
+bool	Fixed::operator>=(const Fixed &num)
+{
+	return (this->toFloat() >= num.toFloat());
+}
+
+bool	Fixed::operator<=(const Fixed &num)
+{
+	return (this->toFloat() <= num.toFloat());
+}
+
+float	Fixed::operator*(const Fixed &num)
+{
+	return (this->toFloat() * num.toFloat());
+}
+
+float	Fixed::operator+(const Fixed &num)
+{
+	return (this->toFloat() + num.toFloat());
+}
+
+float	Fixed::operator-(const Fixed &num)
+{
+	return (this->toFloat() - num.toFloat());
+}
+
+float	Fixed::operator/(const Fixed &num)
+{
+	return (this->toFloat() / num.toFloat());
+}
+
+//Postfix
+Fixed	Fixed::operator++(int)
+{
+	Fixed	temp = *this;
+	this->_value++;	
+	return(temp);
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	temp = *this;
+	this->_value--;	
+	return(temp);
+}
+
+//Prefix
+Fixed	Fixed::operator++()
+{
+	_value++;
+	return(*this);
+}
+
+Fixed	Fixed::operator--()
+{
+	_value++;
+	return(*this);
+}
+
+const Fixed	&Fixed::min(const Fixed &num_1, const Fixed &num_2)
+{
+	if (num_1.toFloat() >= num_2.toFloat())
+		return (num_2);
+	return (num_1);
+}
+
+const Fixed	&Fixed::max(const Fixed &num_1, const Fixed &num_2)
+{
+	if (num_1.toFloat() <= num_2.toFloat())
+		return (num_2);
+	return (num_1);
+}
+
+Fixed	&Fixed::max(Fixed &num_1, Fixed &num_2)
+{
+	if (num_1 <= num_2)
+		return (num_2);
+	return (num_1);
+}
+
+Fixed	&Fixed::min(Fixed &num_1, Fixed &num_2)
+{
+	if (num_1 >= num_2)
+		return (num_2);
+	return (num_1);
 }
 
 // void	print_bits(int num)
