@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   point.cpp                                          :+:      :+:    :+:   */
+/*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:16:59 by amaligno          #+#    #+#             */
-/*   Updated: 2023/12/18 22:52:30 by amaligno         ###   ########.fr       */
+/*   Updated: 2023/12/19 22:47:13 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-Point::Point(): x(0), y(0)
+Point::Point(): pos_x(0), pos_y(0)
 {
 }
 
-Point::Point(float x, float y)
+Point::Point(float x, float y): pos_x(x), pos_y(y)
 {
-	this->x = x;
-	this->y = y;
 }
 
 Point::Point(Point &copy)
@@ -27,12 +25,12 @@ Point::Point(Point &copy)
 	*this = copy;
 }
 
-float	Point::get_x(void)
+float	Point::x(void) const
 {
-	return(this->x.toFloat());
+	return(this->pos_x.toFloat());
 }
 
-float	Point::get_y(void)
+float	Point::y(void) const
 {
-	return(this->y.toFloat());
+	return(this->pos_y.toFloat());
 }
