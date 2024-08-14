@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:16:59 by amaligno          #+#    #+#             */
-/*   Updated: 2023/12/19 22:47:13 by amaligno         ###   ########.fr       */
+/*   Updated: 2024/08/14 18:12:16 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,26 @@ Point::Point(float x, float y): pos_x(x), pos_y(y)
 {
 }
 
-Point::Point(Point &copy)
+Point::~Point()
+{
+}
+
+Point::Point(const Point &copy)
 {
 	*this = copy;
 }
 
-float	Point::x(void) const
+Point	&Point::operator=(const Point &src)
 {
+	this->pos_x = src.get_x();
+	this->pos_y = src.get_y();
+}
+
+
+
+float	Point::x(void) const
+{	
+	std::cout << ".x member function, pox_x value: " << pos_x << '\n';
 	return(this->pos_x.toFloat());
 }
 
