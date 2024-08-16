@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaligno <antoinemalignon@yahoo.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:16:59 by amaligno          #+#    #+#             */
-/*   Updated: 2024/08/14 18:12:16 by amaligno         ###   ########.fr       */
+/*   Updated: 2024/08/16 12:58:23 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,31 @@ Point::~Point()
 {
 }
 
-Point::Point(const Point &copy)
+Point::Point(const Point &copy) : pos_x(copy.get_x()), pos_y(copy.get_y())
 {
-	*this = copy;
 }
 
 Point	&Point::operator=(const Point &src)
 {
-	this->pos_x = src.get_x();
-	this->pos_y = src.get_y();
+	(Fixed)this->pos_x = src.pos_x;
+	(Fixed)this->pos_y = src.pos_y;
+	// std::cout << "point src: (" << src.x() << ',' << src.y() << ")\n";
+	// std::cout << "assignement operator this: (" << this->x() << ',' << this->y() << ")\n";
+	return (*this);
 }
 
+Fixed	Point::get_x(void) const
+{
+	return (this->pos_x);
+}
 
+Fixed	Point::get_y(void) const
+{
+	return (this->pos_y);
+}
 
 float	Point::x(void) const
 {	
-	std::cout << ".x member function, pox_x value: " << pos_x << '\n';
 	return(this->pos_x.toFloat());
 }
 

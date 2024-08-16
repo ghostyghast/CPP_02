@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaligno <antoinemalignon@yahoo.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:22:53 by amaligno          #+#    #+#             */
-/*   Updated: 2024/08/14 17:58:45 by amaligno         ###   ########.fr       */
+/*   Updated: 2024/08/16 13:00:04 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,28 +30,25 @@ static float area (const Point p1, const Point p2, const Point p3)
 
 	if (area >= 0)
 		return (area);
-	else
-		return (area * -1);
+	return (area * -1);
 }
 
 bool bsp(const Point a, const Point b, const Point c, const Point point)
 {
-	float d0, d1, d2, d3;
-	bool ret_val = false;
-
+	float d0 , d1, d2, d3;
+	
 	d0 = area(a, b, c);
 	d1 = area(point, a, b);
 	d2 = area(point, b, c);
 	d3 = area(point, a, c);
 	
+	cout << "d0: " << d0<< '\n';
 	cout << "d1: " << d1 << '\n';
-	cout << "d2: " << d1 << '\n';
-	cout << "d3: " << d1 << '\n';
-	cout << "d4: " << d1 << '\n';
+	cout << "d2: " << d2 << '\n';
+	cout << "d3: " << d3 << '\n';
 	if ( d1 == 0 || d2 == 0 || d3 == 0)
-		ret_val = false;
+		return (false);
 	else if ( d1 + d2 + d3 == d0 )
-		ret_val = true;
-
-	return (ret_val);
+		return (true);
+	return (false);
 }

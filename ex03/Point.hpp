@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaligno <antoinemalignon@yahoo.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:03:03 by amaligno          #+#    #+#             */
-/*   Updated: 2024/08/14 18:11:54 by amaligno         ###   ########.fr       */
+/*   Updated: 2024/08/16 11:55:24 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class	Point{
 		//Destructor
 			~Point();
 		//Operator overloads
-			Point	&operator=(const Point src);
+			Point	&operator=(const Point &src);
 };
 
 #endif

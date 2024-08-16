@@ -6,7 +6,7 @@ NAME = fixed_point
 
 CC = c++
 
-FLAGS = -Wall -Werror -Wextra -std=c++98 -g3
+FLAGS = -Wall -Werror -Wextra -std=c++98 #-fsanitize=address -g3
 
 %.o: %.cpp
 	@$(CC) $(FLAGS) -c $< -o $@

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amaligno <antoinemalignon@yahoo.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 19:46:39 by amaligno          #+#    #+#             */
-/*   Updated: 2024/08/14 18:08:01 by amaligno         ###   ########.fr       */
+/*   Updated: 2024/08/16 12:58:42 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@ Fixed::Fixed()
 	_value = 0;
 }
 
-Fixed::Fixed(const Fixed &copy)
+Fixed::Fixed(const Fixed &copy) : _value(copy.getRawBits())
 {
 	// cout << "Copy constructor called\n";
-	*this = copy;
 }
 
 Fixed::Fixed(const int i)
@@ -38,7 +37,6 @@ Fixed::Fixed(const float f)
 	// cout << "Float constructor called\n";
 	// print_bits(f);
 	_value = roundf(f * (1 << _fracBits));
-	std::cout << "fixed constructor, _value: " << _value << '\n';
 	// print_bits(_value);
 }
 
@@ -71,7 +69,6 @@ float	Fixed::toFloat(void) const
 
 Fixed 	&Fixed::operator=(const Fixed copy)
 {
-	// cout << "Copy assignement operator called\n";
 	_value = copy.getRawBits();
 	return *this;
 }
