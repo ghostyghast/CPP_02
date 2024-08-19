@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaligno <antoinemalignon@yahoo.com>       +#+  +:+       +#+        */
+/*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 18:58:58 by amaligno          #+#    #+#             */
-/*   Updated: 2024/08/16 12:57:32 by amaligno         ###   ########.fr       */
+/*   Updated: 2024/08/19 18:53:20 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(void)
 	Point a(0, 2);
 	Point b(2, 0);
 	Point c;
-	Point P(0.5, 0.5);
+	Point P(2, 0);
 
     if (bsp(a, b, c, P))
         std::cout << "Point is in triangle!\n";

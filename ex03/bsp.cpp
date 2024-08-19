@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaligno <antoinemalignon@yahoo.com>       +#+  +:+       +#+        */
+/*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 19:22:53 by amaligno          #+#    #+#             */
-/*   Updated: 2024/08/16 13:00:04 by amaligno         ###   ########.fr       */
+/*   Updated: 2024/08/19 18:53:38 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,20 @@ static float area (const Point p1, const Point p2, const Point p3)
 
 bool bsp(const Point a, const Point b, const Point c, const Point point)
 {
-	float d0 , d1, d2, d3;
+	float a0 , a1, a2, a3;
 	
-	d0 = area(a, b, c);
-	d1 = area(point, a, b);
-	d2 = area(point, b, c);
-	d3 = area(point, a, c);
+	a0 = area(a, b, c);
+	a1 = area(point, a, b);
+	a2 = area(point, b, c);
+	a3 = area(point, a, c);
 	
-	cout << "d0: " << d0<< '\n';
-	cout << "d1: " << d1 << '\n';
-	cout << "d2: " << d2 << '\n';
-	cout << "d3: " << d3 << '\n';
-	if ( d1 == 0 || d2 == 0 || d3 == 0)
+	cout << "a0: " << a0<< '\n';
+	cout << "a1: " << a1 << '\n';
+	cout << "a2: " << a2 << '\n';
+	cout << "a3: " << a3 << '\n';
+	if (!a1 || !a2 || !a3)
 		return (false);
-	else if ( d1 + d2 + d3 == d0 )
+	else if (a1 + a2 + a3 == a0)
 		return (true);
 	return (false);
 }
