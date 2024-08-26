@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaligno <antoinemalignon@yahoo.com>       +#+  +:+       +#+        */
+/*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 19:38:40 by amaligno          #+#    #+#             */
-/*   Updated: 2024/08/16 12:00:54 by amaligno         ###   ########.fr       */
+/*   Updated: 2024/08/26 13:49:34 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,12 @@ class Fixed{
 		static const int	_fracBits;
 
 	public:
+		//Construcors
 				Fixed();
 				Fixed(const Fixed &copy);
 				Fixed(const int i);
 				Fixed(const float f);
+		//Destructor
 				~Fixed();
 		//Getter
 		int		getRawBits(void) const;
@@ -39,7 +41,7 @@ class Fixed{
 		static const Fixed	&max(const Fixed &num_1, const Fixed &num_2);
 		static Fixed		&min(Fixed &num_1, Fixed &num_2);
 		static Fixed		&max(Fixed &num_1, Fixed &num_2);
-	//operator overloads
+		//operator overloads
 			Fixed	&operator=(const Fixed num);
 		//Conditional
 			bool	operator<(const Fixed &num);

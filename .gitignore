@@ -1,6 +1,7 @@
-*.o
-fixed_point
-bsp
-test.cpp
-test.c
-a.out
+*
+
+!*/
+!*.cpp
+!*.hpp
+!.gitignore
+!Makefile
